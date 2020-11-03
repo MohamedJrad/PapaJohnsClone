@@ -1,4 +1,4 @@
-import { Map } from '../components/content/nousTrouver/Map';
+import { Map } from '../components/items/nousTrouver/Map';
 
 const Location = () => {
 	return (

@@ -7,7 +7,7 @@ const AutoplaySlider = withAutoplay(AwesomeSlider);
 
 export const CustomeSlider = () => {
 	return (
-		<div className="">
+		<div className="relative">
 			<MobileContent />
 			<DesktopContent />
 		</div>
@@ -15,10 +15,9 @@ export const CustomeSlider = () => {
 };
 
 const DesktopContent = () => (
-	<div className="hidden md:block">
+	<div className="hidden md:block  mb-32 ">
 		<Wrapper>
-			{' '}
-			<AutoplaySlider play interval={5000} className=" mb-16  	  ">
+			<AutoplaySlider play interval={5000} className=" h-700  ">
 				<img source={require('../../assets/images/desktopslider/bs1.jpg')} />
 				<img source={require('../../assets/images/desktopslider/bs2.jpg')} />
 				<img source={require('../../assets/images/desktopslider/bs4.jpg')} />
@@ -29,14 +28,13 @@ const DesktopContent = () => (
 );
 
 const MobileContent = () => (
-	<div className="md:hidden">
+	<div className="md:hidden mb-16  ">
 		<Wrapper>
-			{' '}
 			<AutoplaySlider
 				play
 				cancelOnInteraction={false} // should stop playing on user interaction
 				interval={6000}
-				className=" mb-16  	  "
+				className=" h-700"
 			>
 				<img source={require('../../assets/images/mobileSlider/ss1.jpg')} />
 				<img source={require('../../assets/images/mobileSlider/ss2.jpg')} />
@@ -52,6 +50,7 @@ const Wrapper = styled.div`
 		--control-bullet-color: #fff;
 		--control-bullet-active-color: #2f855a;
 	}
+
 	.awssld__bullets button {
 		width: 25px;
 		height: 25px;
@@ -60,5 +59,8 @@ const Wrapper = styled.div`
 	}
 	.awssld__bullets {
 		bottom: -50px;
+	}
+	.awssld__content > img {
+		object-fit: fill;
 	}
 `;

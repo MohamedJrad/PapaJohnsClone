@@ -3,6 +3,10 @@ import Layout from '../components/Layout';
 import '../styles/tailwind.css';
 import '../styles/styles.css';
 
-export default function MyApp({ Component, pageProps }) {
-	return <Layout>{<Component {...pageProps} />}</Layout>;
+export default function MyApp({ Component }) {
+	return (
+		<div>
+			<Layout>{<Component className="min-h-screen" />}</Layout>
+		</div>
+	);
 }

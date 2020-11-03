@@ -1,9 +1,9 @@
-import { Slider } from '../components/content/Slider';
+import { HomeContent } from '../components/content/HomeContent';
 
 const Home = () => {
 	return (
-		<div style={{ height: '80vh' }} className="  ">
-			<Slider />
+		<div>
+			<HomeContent />
 		</div>
 	);
 };

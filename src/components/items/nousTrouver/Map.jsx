@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import ReactMapGL, { NavigationControl, Popup } from 'react-map-gl';
 import { CustomeMarker } from './CustomeMarker';
 
+const acessToken = process.env.NEXT_PUBLIC_MAB_BOX_ACESS_TOKEN;
 export const Map = () => {
 	const [ viewport, setViewport ] = useState({
 		longitude: 10.268038,
@@ -33,7 +34,7 @@ export const Map = () => {
 		<div className="mx-8">
 			<ReactMapGL
 				{...viewport}
-				mapboxApiAccessToken="MAP-BOX-KEY"
+				mapboxApiAccessToken={acessToken}
 				onViewportChange={(viewport) => {
 					setViewport(viewport);
 				}}
@@ -44,6 +45,7 @@ export const Map = () => {
 					</div>
 					{locations.map((location, index) => (
 						<button
+							key={index}
 							onClick={(e) => {
 								e.preventDefault();
 								setSelectedPark(location);
